@@ -1,6 +1,4 @@
 package lab4;
-
-public class question1 {
     
 public abstract class StaffMember {
     
@@ -38,4 +36,5 @@ public abstract class StaffMember {
   
     public abstract double calculateMonthlyPayment();
 }  
-}
+
+

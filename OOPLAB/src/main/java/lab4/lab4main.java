@@ -2,12 +2,20 @@ package lab4;
 
 public class lab4main {
    public static void main(String[] args){
-      Lecturer Lec = new Lecturer("Kamal Perara","L001","COST",3,50000);
+       
+      StaffMember.showSystemName(); 
+      Lecturer Lec1 = new Lecturer("Nimal","L001","COST",3,50000);
+      Lecturer Lec2 = new Lecturer("Kamal","L002","COST",2,60000);
+      
       LabAssistant LabAssistant1= new LabAssistant("Nimesh","A001","COST",120,500);
       
-      UniversityPolicy.showPolicyHeader();
-      System.out.println(UniversityPolicy.UNIVERSITY_NAME);
-      System.out.println("Bonus of Lecture:"+UniversityPolicy.calculateBonus(Lec.calculateMonthlyPayment()));
-       System.out.println("Bonus of Lab Assistant:"+UniversityPolicy.calculateBonus(LabAssistant1.calculateMonthlyPayment()));
-   } 
+      Lec1.displayLecturerDetails();
+      System.out.println();
+      Lec2.displayLecturerDetails();
+      System.out.println();
+      LabAssistant1.displayLabAssistantDetails();
+      System.out.println();
+      
+      System.out.println("Total Staff created: "+StaffMember.getstaffCount());
+    } 
 }

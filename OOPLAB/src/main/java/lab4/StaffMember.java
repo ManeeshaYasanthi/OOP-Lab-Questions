@@ -2,16 +2,19 @@ package lab4;
     
 public abstract class StaffMember {
     
-   
     private String fullName; 
     private final String staffid; 
     protected String department; 
+    
+     private static int staffCount= 0;
 
    
     public StaffMember(String fullName, String staffid, String department) {
         this.fullName = fullName;
         this.staffid = staffid;
         this.department = department;
+        
+        staffCount++;
     }
 
    
@@ -35,6 +38,17 @@ public abstract class StaffMember {
 
   
     public abstract double calculateMonthlyPayment();
+    
+    
+    public static void showSystemName(){
+        System.out.println("---Campus Staff Payment System---");
+    }
+    
+    public static int getstaffCount(){
+        return staffCount;
+    }
 }  
 
-
+/*
+staffCount is static because it is shared among all objects of StaffMember.
+*/

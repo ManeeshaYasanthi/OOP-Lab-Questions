@@ -5,13 +5,9 @@ public class lab4main {
       Lecturer Lec = new Lecturer("Kamal Perara","L001","COST",3,50000);
       LabAssistant LabAssistant1= new LabAssistant("Nimesh","A001","COST",120,500);
       
-      Lec.displayLecturerDetails();
-      
-      System.out.println("Monthly Payment: "+Lec.calculateMonthlyPayment());
-      
-      System.out.println();
-      
-      LabAssistant1.displayLabAssistantDetails();
-      System.out.println("Monthly Payment: "+LabAssistant1.calculateMonthlyPayment());
+      UniversityPolicy.showPolicyHeader();
+      System.out.println(UniversityPolicy.UNIVERSITY_NAME);
+      System.out.println("Bonus of Lecture:"+UniversityPolicy.calculateBonus(Lec.calculateMonthlyPayment()));
+       System.out.println("Bonus of Lab Assistant:"+UniversityPolicy.calculateBonus(LabAssistant1.calculateMonthlyPayment()));
    } 
 }

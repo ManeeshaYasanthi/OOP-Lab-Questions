@@ -35,5 +35,26 @@ public class StudentDAO1 {
         }
     }
    
+    public void displayAllStudents() {
+        String sql = "SELECT student_id, student_name, mark FROM students";
+        
+        try (Connection conn = StudentDatabaseConnection.getConnection();
+             PreparedStatement statement = conn.prepareStatement(sql);
+             java.sql.ResultSet resultSet = statement.executeQuery()) {
+            
+           
+            while (resultSet.next()) {
+                int id = resultSet.getInt("student_id");
+                String name = resultSet.getString("student_name");
+                int mark = resultSet.getInt("mark");
+                
+               
+                System.out.println(id + "\t" + name + "\t" + mark);
+            }
+            
+        } catch (SQLException e) {
+            System.out.println("Database error: " + e.getMessage());
+        }
+    }
 }    
 
